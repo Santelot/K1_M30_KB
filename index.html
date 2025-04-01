@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 30</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+         /* Pequeño triángulo para simular bocadillo de diálogo */
+        .dialogue::before {
+            /* content: ''; */ /* Desactivado temporalmente */
+            /* position: absolute; */
+            /* top: 15px; */
+            /* left: -10px; */
+            /* border-width: 10px 10px 10px 0; */
+            /* border-style: solid; */
+            /* border-color: transparent #F39C12 transparent transparent; */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 30: El Primer Viaje de Kinderbot</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks (Bloques de construcción gigantes) por cada pareja de niños. Asegúrate de que los Kinderbots estén cargados.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Bienvenida y Novedades! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Dar la bienvenida, presentar la sorpresa del día (Kinderbot) y preparar sus mentes para aprender algo nuevo.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda con entusiasmo. Introduce la idea de una gran sorpresa en el taller del CODE SQUAD.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, súper Genios del CODE SQUAD! ¡Bienvenidos de nuevo a nuestro cuartel general! ¿Están listos para una aventura súper emocionante hoy? ¡Porque tengo una sorpresa GIGANTE que mostrarles! Algo nuevo ha llegado a nuestro taller... algo que nos ayudará en nuestras misiones. ¡Prepárense para conocerlo! Pero antes, ¡necesitamos que nuestros cerebros estén súper despiertos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica por qué es importante preparar el cerebro para conocer al nuevo amigo y aprender a usarlo.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Muy bien, equipo! Para descubrir nuestra sorpresa y aprender a usarla, ¡nuestros cerebros necesitan estar al 100%! Vamos a hacer un ejercicio súper divertido en nuestro Gimnasio Cerebral. Escucharemos una canción que nos enseñará pasos importantes. ¡Pongan mucha atención, porque estos pasos nos ayudarán a comunicarnos con nuestro nuevo amigo! ¡Vamos a calentar esas neuronas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Preparar a los niños física y mentalmente, introduciendo de forma lúdica la idea de seguir instrucciones secuenciales.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía a los niños a seguir las instrucciones de la canción. Anímales a moverse y divertirse.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Listos para bailar, CODE SQUAD! Esta canción es como un código secreto de movimientos. Escuchen bien: si dice 'adelante', damos un paso al frente; si dice 'girar', ¡damos una vuelta! ¡Sigan la música y las instrucciones! No se preocupen si se equivocan, ¡lo importante es intentarlo y mover el cuerpo! ¡Este baile nos prepara para dar instrucciones a nuestro nuevo amigo! ¡A bailar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema y Presentación de Kinderbot -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🤖 Actividad 3: ¡Conozcan a Kinderbot! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Introducir a Kinderbot como nuevo miembro del equipo y plantear su primer desafío: aprender a moverse.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Presenta físicamente a Kinderbot con emoción. Narra su "origen" o llegada.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Genios, redoble de tambores, por favor! ¡Les presento a... KINDERBOT! (Muestra a Kinderbot). ¡Miren qué genial es! Tiene luces, botones y ¡ruedas para moverse! Kinderbot es nuestro nuevo compañero de misiones, ¡creado aquí mismo en el taller del CODE SQUAD para ayudarnos! Es muy inteligente, pero como acaba de 'nacer', ¡necesita aprender a hacer cosas! Su primera misión, y la nuestra, es enseñarle a ¡dar sus primeros pasos! ¿Le ayudamos?"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto específico: programar el primer movimiento de Kinderbot de un iBrick a otro.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Nuestro nuevo amigo Kinderbot está listo para su primera aventura! Pero... ¡no sabe cómo moverse solito! ¡Ahí entramos nosotros, el súper CODE SQUAD! Nuestro reto de hoy es muy importante: vamos a usar estos bloques gigantes (señala los iBricks) para marcar un punto de inicio y un punto final. Luego, le daremos a Kinderbot las instrucciones secretas, ¡su primer código!, para que viaje desde el bloque de inicio hasta el bloque final. ¡Será su primer viaje! ¿Están listos para ser los primeros maestros de Kinderbot?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos al Rescate! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Fomentar la colaboración explicando la importancia de trabajar juntos para enseñar a Kinderbot.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que enseñar a Kinderbot será más fácil y divertido en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Equipo CODE SQUAD! Enseñar a Kinderbot a dar sus primeros pasos es una tarea súper especial, ¡y será mucho más divertido si lo hacemos juntos! ¿Saben qué? ¡Cuando dos genios trabajan unidos, sus ideas se vuelven el doble de brillantes! Es como si juntáramos súper poderes. Ahora, vamos a formar parejas de Súper Maestros de Kinderbot. Busquen a un compañero o compañera, ¡y juntos serán un equipo invencible! Si alguien necesita ayuda para encontrar pareja, ¡levante la mano!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Refuerza la idea de ayudarse mutuamente.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Súper Maestros? ¡Genial! Recuerden, en un equipo, nos ayudamos, compartimos los bloques (iBricks), decidimos juntos qué botones presionar en Kinderbot y ¡celebramos cuando lo logramos! Si algo no sale bien a la primera, ¡no pasa nada! Lo intentamos de nuevo juntos. ¡Kinderbot está emocionado por aprender de ustedes!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Programando a Kinderbot! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⌨️ Actividad 5: ¡A Programar a Kinderbot! ⏰ Tiempo: 6 minutos</div>
+        <div class="subtitle">Objetivo: Enseñar los botones básicos de Kinderbot y guiar la programación del primer movimiento según el nivel.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+            <!-- Paso Común: Explicar Botones -->
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "Conociendo a Kinderbot". Muestra los botones clave: Flecha Adelante y el botón Verde de 'Go'. Explica su función de forma simple.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Miren de cerca a Kinderbot, Súper Maestros! Tiene botones mágicos en su cabeza. Hoy usaremos dos muy importantes: ¿Ven esta flecha que apunta hacia adelante? (Señala). ¡Esa le dice a Kinderbot 'Ve hacia adelante!' Y este botón grande y verde (Señala) es como decirle '¡YA! ¡Hazlo! ¡Empieza tu viaje!'. Primero le decimos QUÉ hacer (con las flechas) y luego le decimos CUÁNDO hacerlo (con el botón verde 'Go'). ¡Fácil, verdad?"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: Un Pasito". Guía para colocar los iBricks cerca y programar 1 paso adelante.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Coloquen un bloque aquí (indica) y otro ¡muy cerquita! (indica). Kinderbot solo necesita dar ¡UN pasito! Para eso, presionen la flecha 'Adelante' ¡UNA vez! (Demuestra). ¿Ya lo hicieron? ¡Perfecto! Ahora, NO presionen el botón verde 'Go' todavía, ¡eso es para después! Solo preparen la instrucción. ¡Están enseñando a Kinderbot a caminar!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                <td><strong>PASO 2 - K2 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: Dos Pasitos". Guía para colocar los iBricks un poco más lejos y programar 2 pasos adelante.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Atención, Equipo K2! Coloquen un bloque aquí (indica) y otro un poquito más lejos (indica). ¡Kinderbot necesita dar DOS pasitos para llegar! ¿Cómo le decimos eso? ¡Fácil! Presionen la flecha 'Adelante' ¡DOS veces seguidas! Una... y dos. (Demuestra). ¡Así Kinderbot sabe que son dos pasos! ¡Muy bien! Aún no presionen el botón verde 'Go', ¡solo preparen el código! ¡Kinderbot está aprendiendo rápido gracias a ustedes!"
+                    </div>
+                </td>
+            </tr>
+            <!-- K3 -->
+             <tr class="k3-content">
+                <td><strong>PASO 2 - K3 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: ¿Dos o Tres Pasitos?". Guía para colocar iBricks a una distancia media y experimentar con 2 o 3 pasos.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Desafío para el Equipo K3! Pongan un bloque aquí (indica) y otro a una distancia media (indica). Ahora viene lo interesante... ¿Necesitará Kinderbot DOS o TRES pasitos para llegar? ¡Vamos a investigar! Prueben presionando la flecha 'Adelante' DOS veces. O quizás necesiten TRES veces. ¡Hablen con su pareja y decidan cuántos pasos creen que son! (Demuestra presionar 2 o 3 veces). ¡Preparen su código! No presionen 'Go' todavía. ¡Son unos verdaderos científicos de la robótica!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Probando a Kinderbot! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-kinderbot')">
+        <div class="title">🚀 Actividad 6: ¡El Primer Viaje! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el código programado y observar el movimiento de Kinderbot, reforzando causa y efecto.</div>
+    </div>
+    <div id="probando-kinderbot" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Anima a presionar 'Go' y celebra el primer movimiento de Kinderbot.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1, llegó el momento más esperado! Ya le dijeron a Kinderbot que dé UN pasito adelante. Ahora, coloquen a Kinderbot en el bloque de inicio, apunten hacia el bloque final y... ¡Presionen el botón verde 'Go'! ¡Miren! ¡Se mueve! ¡Bravoooo! ¡Kinderbot dio su primer paso gracias a ustedes! ¡Chóquenla, Súper Maestros!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Anima a presionar 'Go' y observa si llega con dos pasos. Celebra.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K2, es la hora de la verdad! Programaron a Kinderbot para dar DOS pasitos. Colóquenlo en el bloque de inicio, asegúrense de que mire hacia el bloque final y... ¡A la cuenta de tres, presionen el botón verde 'Go'! Uno... dos... ¡tres! ¡Miren cómo avanza! ¿Llegó? ¡Síii! ¡Fantástico! ¡Le enseñaron a dar dos pasos seguidos! ¡Son geniales!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Anima a presionar 'Go'. Observa el resultado. Si no llega o se pasa, anímales a reprogramar (presionar 'Clear' si es necesario y volver a introducir pasos). Celebra el proceso de experimentación.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K3, momento de experimentar! ¿Decidieron si eran dos o tres pasos? ¡Vamos a probar! Pongan a Kinderbot en el inicio, apunten bien y... ¡Presionen el botón verde 'Go'! Observen con atención... ¿Llegó justo al bloque? ¿Se quedó corto? ¿Se pasó? ¡No pasa nada! Si no funcionó perfecto, ¡somos científicos! Podemos borrar el código (con el botón azul 'Clear', si se los muestro) e intentar con un número diferente de pasos. ¡Prueben de nuevo hasta que llegue! ¡Descubrir la respuesta es parte de la diversión! ¡Celebremos cada intento!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 30) -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Misión Cumplida y Reflexión! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Cerrar la historia celebrando el éxito de Kinderbot y reflexionar sobre lo aprendido al programar.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Lo Logramos!". Cierra la historia felicitando a los niños y a Kinderbot. Realiza preguntas de reflexión.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡SÍÍÍÍ, CODE SQUAD! ¡Misión CUMPLIDA! ¡Gracias a ustedes, nuestros increíbles Súper Maestros, Kinderbot ha completado con éxito su primerísimo viaje! ¡Miren qué contento está! (Mueve a Kinderbot un poco). Aprendió a moverse de un lugar a otro siguiendo nuestras instrucciones, ¡nuestro código! ¡Son los mejores programadores! Ahora, pensemos un poquito en lo que hicimos:
+1. ¿Qué botones usamos hoy para que Kinderbot se moviera? (Señalar Adelante y Go)
+2. ¿Qué hizo Kinderbot cuando presionaron el botón verde 'Go'? (Se movió adelante)
+3. ¿Les gustó enseñarle a Kinderbot a dar sus primeros pasos?
+¡Estoy súper orgulloso de ustedes! ¡Kinderbot les da las gracias! ¡Hasta la próxima misión, Genios!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        // Encuentra el elemento padre .activity para manejar la clase 'active'
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Opcional: para estilos visuales
+        } else {
+            // Opcional: Cierra otros contenidos abiertos si quieres un acordeón
+            // var openContents = document.querySelectorAll('.content');
+            // openContents.forEach(function(c) { c.style.display = 'none'; });
+            // var activeActivities = document.querySelectorAll('.activity.active');
+            // activeActivities.forEach(function(a) { a.classList.remove('active'); });
+
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Opcional: para estilos visuales
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Ocultar todo el contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Mostrar el contenido del nivel seleccionado
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Cambiar a 'table-row' si los elementos son <tr>
+             // o mantener 'block' si son <div> u otros elementos de bloque.
+             // Asumiendo que son <tr> basados en la estructura HTML:
+             el.style.display = 'table-row';
+        });
+    }
+
+    // Inicializar la vista correcta al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
